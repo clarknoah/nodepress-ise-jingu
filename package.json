@@ -1,0 +1,19 @@
+{
+  "name": "nodepress-ise-jingu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarknoah/nodepress-ise-jingu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clarknoah/nodepress-ise-jingu/issues"
+  },
+  "homepage": "https://github.com/clarknoah/nodepress-ise-jingu#readme"
+}
