@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/clarknoah/nodepress-ise-jingu/issues"
   },
-  "homepage": "https://github.com/clarknoah/nodepress-ise-jingu#readme"
+  "homepage": "https://github.com/clarknoah/nodepress-ise-jingu#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
