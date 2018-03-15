@@ -3,12 +3,72 @@
 # Express Ise Jingu Workflow
 
 1. Install express
-> `npm install --save express`
+> `npm install --save express nodemon`
+2. Edit package.json file to run nodemon app.js
+> `"start":"nodemon app.js"`
 2. Create app.js file
 > `touch app.js`
-3.
+3. Create Route Directory
+> `mkdir routes`
+3. Create public folder
+> `mkdir public`
+4. Create `index.html` file in public folder and fill out a basic HTML scaffold
+3. **Initial Configuration of app.js**
+4. Import express
+```javascript
+const express = require('express');
+```
+5. Import bodyparser
+```javascript
+var bodyParser = require('body-parser');
+```
+6. Create `app` variable from express
+```javascript
+const app = express();
+```
+7. Configure static route
+```javascript
+app.use(express.static(__dirname+'/public'));
+```
+8. Setup body and URL encoding
+```javascript
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+```
+8. Create port listener in app.js
+```javascript
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
+```
+10. create `index.js` in routes
+11. create `cookie, http-status, meta, query, req, res, static, and verb.js in routes`
+12. Create import router from express.Router() for all files
+13. In index.js use router.use to define the routes
+```javascript
+router.use('/route', require('./route.js'));
+```
+14.Begin creating verb routes
+15. `Get Post`
+16. Create Get Route that returns a string informing the user that post has been made
+17. `Post Request`
+18. Provide html form in `index.js` which posts a field named `post_key` to server, and respond with the value of the key
+19. `Req Object Route`
+20. `req.params`
+21. Create a route within `req.js` which uses the route `/params/:key`
+22. Create an anchor on `index.html` which calls to `/req/params/value`
+23. `req.body`
+24. Create a POST method in `req.js` which logs the `req.body` value, and returns the body to the client
+25. Create a form on `index.js` which posts several inputs to `/req/body`
+26. `req.headers`
+27.  Add anchor in `index.js` and add get route for `/req/ip` in `req.js`, log `req.ip`
+28. `req.path`
+29. Add anchor in `index.js` with `req/path`, and at get request within `req.js`, log path and return path to client
+30. `req.protocol`
+31. Add anchor in `index.js` with `/req/protocol`, create get route in `req.js` with log of `req.protocol`
+32. `req.secure`
+33. Add anchor in `index.js` with `/req/secure-status`, create get route in `req.js` with log of `req.secure`
+34. `req.acceptedLanguages`
+35. Add anchor in `index.js` with `/req/languages`, create get route in `req.js` with log of `req.acceptedLanguages`
 
-# Outline
 
 1. Express
   1. Main Functions
@@ -68,19 +128,16 @@
   2. serve 404.html
   3. serve 500.html
 1. Use all of the app.VERB commands (three endpoints per verb)
-  1. get
-  2. post
-  3. put
-  4. patch
-  5. delete
-2. Setting the port that the server will use
+  1. get X
+  2. post X
+2. Setting the port that the server will use X
 3. Request Object Anatomy
-  1. Log the params
-  2. Log the body
-  3. Log headers
-  4. Log IP
-  5. Log path
-  8. log protocol
+  1. Log the params X
+  2. Log the body X
+  3. Log headers X
+  4. Log IP X
+  5. Log path X
+  8. log protocol X
   9. log secure status
   10. log languages
   11. Return all this information as a JSON object to the client
@@ -116,3 +173,14 @@
   11. 500 Internal Server Error
 9. HTTPS
   1. Establish a self generated cert for HTTPS
+
+  # Routes
+
+1. `/static` Will house all my static file routes, read a file from filesystem
+2. `/verb/` Will house all my HTTP commands
+3. `/req/` Will house my listeners for different req values
+4. `/res/` Willl house the values for responses
+5. `/cookie/` will show how my cookies are setup
+6. `/meta/` will house my routes that require Metacharacters
+7. `/query/` Will house my one and two query strings,
+8. `/http-status/` will house my http status codes
